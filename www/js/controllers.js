@@ -1,48 +1,48 @@
 angular.module('starter.controllers', [])
 
-imageApp.controller("SecureController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera) {
+// imageApp.controller("SecureController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera) {
 
-    $ionicHistory.clearHistory();
+//     $ionicHistory.clearHistory();
 
-    $scope.images = [];
+//     $scope.images = [];
 
-    var fbAuth = fb.getAuth();
-    if(fbAuth) {
-        var userReference = fb.child("users/" + fbAuth.uid);
-        var syncArray = $firebaseArray(userReference.child("images"));
-        $scope.images = syncArray;
-    } else {
-        $state.go("firebase");
-    }
+//     var fbAuth = fb.getAuth();
+//     if(fbAuth) {
+//         var userReference = fb.child("users/" + fbAuth.uid);
+//         var syncArray = $firebaseArray(userReference.child("images"));
+//         $scope.images = syncArray;
+//     } else {
+//         $state.go("firebase");
+//     }
 
-    $scope.upload = function() {
-        var options = {
-            quality : 75,
-            destinationType : Camera.DestinationType.DATA_URL,
-            sourceType : Camera.PictureSourceType.CAMERA,
-            allowEdit : true,
-            encodingType: Camera.EncodingType.JPEG,
-            popoverOptions: CameraPopoverOptions,
-            targetWidth: 500,
-            targetHeight: 500,
-            saveToPhotoAlbum: false
-        };
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-            syncArray.$add({image: imageData}).then(function() {
-                alert("Image has been uploaded");
-            });
-        }, function(error) {
-            console.error(error);
-        });
-    }
+//     $scope.upload = function() {
+//         var options = {
+//             quality : 75,
+//             destinationType : Camera.DestinationType.DATA_URL,
+//             sourceType : Camera.PictureSourceType.CAMERA,
+//             allowEdit : true,
+//             encodingType: Camera.EncodingType.JPEG,
+//             popoverOptions: CameraPopoverOptions,
+//             targetWidth: 500,
+//             targetHeight: 500,
+//             saveToPhotoAlbum: false
+//         };
+//         $cordovaCamera.getPicture(options).then(function(imageData) {
+//             syncArray.$add({image: imageData}).then(function() {
+//                 alert("Image has been uploaded");
+//             });
+//         }, function(error) {
+//             console.error(error);
+//         });
+//     }
 
-})
+// })
 
 .controller('UserLoginCtrl', function($scope, $location, UserSession, $ionicPopup, $rootScope) {
   $scope.data = {};
 
   $scope.login = function() {
-    var user_session = new UserSession({ user: $scope.data });
+    var user_session = new UserSession({ volunteer: $scope.data });
     user_session.$save(
       function(data){
         window.localStorage['userId'] = data.id;
