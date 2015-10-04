@@ -1,15 +1,48 @@
 angular.module('starter.controllers', [])
 
+.controller('UserLoginCtrl', function($scope, $location, UserSession, $ionicPopup, $rootScope) {
+  $scope.data = {};
+
+  $scope.login = function() {
+    var user_session = new UserSession({ volunteer: $scope.data });
+    user_session.$save(
+      function(data){
+        window.localStorage['userId'] = data.id;
+        window.localStorage['userName'] = data.name;
+        $location.path('/tab/main/' + data.id);
+      },
+      function(err){
+        var error = err["data"]["error"] || err.data.join('. ')
+        var confirmPopup = $ionicPopup.alert({
+          title: 'An error occured',
+          template: error
+        });
+      }
+    );
+  }
+})
+
+.controller('appCtrl', function($scope, $ionicSideMenuDelegate) {
+    $scope.toggleLeft = function() {
+      console.log("hihihihihi");
+      $ionicSideMenuDelegate.toggleLeft();
+    };
+})
+
+.controller('MainCtrl', function($scope, $stateParams, $http) {
+    console.log($stateParams);
+    data = {
+      weekly_hrs: 5
+    }
+    $http.put('http://localhost:3000/volunteers/' + $stateParams.id, data)
+    .success(function (data, status, headers) {
+        console.log(data);
+    })
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {

@@ -1,1 +1,30 @@
 /* Empty. Add your own CSS if you like */
+.homepage-bg-img {
+	position: relative; 
+	height: 160px;
+}
+
+.homepage-bg-img img {
+	width: 100%;
+	height: 160px;
+}
+
+.homepage-text {
+	position: absolute; 
+	top: 40px; 
+	width: 100%; 
+	text-align:center;
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.homepage-subtext {
+	position: absolute; 
+	top: 80px; 
+	width: 100%; 
+	text-align:center;
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+}
