@@ -13,9 +13,11 @@
 	  <!-- Left menu -->
 	  <ion-side-menu side="left">
 	  	<ion-list>
-	  		<ion-item style="height:150px; background-color:#333;" class="item-avatar item-icon givelift-profile">
-	  		  <img style="left: 80px;" ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
-	  		</ion-item>
+	  		<a href="/#/tab/main/1">
+		  		<ion-item style="height:150px; background-color:#333;" class="item-avatar item-icon givelift-profile">
+		  		  <img style="left: 80px;" ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
+		  		</ion-item>
+		  	</a>
 	  	</ion-list>
 	    <ion-list>
 	      <ion-item class="item-icon-left side-menu-list-item">
@@ -45,21 +47,22 @@
 
 	  </ion-side-menu>
 
-	  <ion-side-menu-content>
-	  		<div class="progress-factor flexy-item">
-	  			<div class="progress-bar">
-	  				<div class="rectangle-3d has-rotation has-colors navy ruler" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="bar-0_0">
-	  					<div class="tooltip white"></div>
-	  					<div class="bar-face face-position roof percentage"></div>
-	  					<div class="bar-face face-position back percentage"></div>
-	  					<div class="bar-face face-position floor percentage volume-lights"></div>
-	  					<div class="bar-face face-position left"></div>
-	  					<div class="bar-face face-position right"></div>
-	  					<div class="bar-face face-position front percentage volume-lights shine"></div>
-	  				</div>
+	  <ion-side-menu-content style="background-color:#888;">
+	  		<div style="margin-top:45px;"></div>
+	  			<div class="row">
+	  				<div class="project-title">Project A</div> 	  				
 	  			</div>
-	  		</div>
+
+	  			<div class="row" ng-click="showPercentange()">
+	  				<input id="project-percentage" type="range" style="width:80%; margin:5% 10%;">
+	  			</div>
+
+	  			<div>
+	  				<span class="percentage-value"> {{value}} % project has finished </span>
+	  				<button class="button button-dark" style="float:right; margin-right: 10%;">
+	  				  Update
+	  				</button>
+	  			</div>
 	  </ion-side-menu-content>
-	  
 	</ion-side-menus>
 </ion-view>

@@ -28,13 +28,21 @@ angular.module('starter.controllers', [])
     };
 })
 
+.controller('ProgressCtrl', function($scope) {
+    var percentage = document.getElementById('project-percentage');
+    $scope.value = percentage.value;
+    $scope.showPercentange = function() {
+      $scope.value = percentage.value;
+    }
+})
+
 .controller('MainCtrl', function($scope, $stateParams, $http, $location) {
     console.log($stateParams);
     $scope.volunteerData = false;
     data = {
       weekly_hrs: 5
     }
-    $http.put('http://localhost:3000/volunteers/' + $stateParams.id, data)
+    $http.put('http://lighthelper.herokuapp.com/volunteers/' + $stateParams.id, data)
     .success(function (data, status, headers) {
         console.log(data);
     })
@@ -49,9 +57,11 @@ angular.module('starter.controllers', [])
         id: departmentIndex
       }
       $scope.properIndex = departmentIndex;
-      $http.get('http://localhost:3000/departments/' + departmentIndex, depId)
+      $http.get('http://lighthelper.herokuapp.com/departments/' + departmentIndex, depId)
       .success(function (data, status, headers) {
-          $scope.volunteers = data.departments
+          
+          $scope.volunteers = data.departments;
+          console.log($scope.volunteers);
           $scope.totalVolunteers = $scope.volunteers.length;
       })
     }

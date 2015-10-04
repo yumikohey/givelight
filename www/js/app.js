@@ -42,7 +42,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
   .state('progress', {
       url: '/progress',
-      templateUrl: 'templates/tab-progress.html'
+      templateUrl: 'templates/tab-progress.html',
+      controller: 'ProgressCtrl'
   })
 
   // setup an abstract state for the tabs directive
