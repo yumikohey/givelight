@@ -34,26 +34,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   
   $stateProvider
 
-  .state('selfie', {
-      url: '/post',
-      templateUrl: 'templates/post.html'
-  })
-
-  .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html'
-  })
-
   .state('userlogin', {
       url: '/user-login',
       templateUrl: 'templates/login-user.html',
       controller: 'UserLoginCtrl'
-  })
-
-  .state('orglogin', {
-      url: '/org-login',
-      templateUrl: 'templates/login-org.html',
-      controller: 'OrgLoginCtrl'
   })
 
   // setup an abstract state for the tabs directive
@@ -61,6 +45,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
+  })
+
+  .state('tab.main', {
+    url: '/main/:id',
+    views: {
+      'tab-main': {
+          templateUrl: 'templates/tab-main.html',
+          controller: 'MainCtrl'
+      }
+    }
   })
 
   // Each tab has its own nav history stack:
@@ -105,5 +99,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/user-login');
 });

@@ -1,12 +1,13 @@
 angular.module('starter.services', [])
 
 .factory('UserSession', function($resource) {
-  return $resource("https://lighthelper.herokuapp.com/volunteers/sign_in.json");
+  return $resource("http://localhost:3000/volunteers/sign_in.json");
 })
 
-.factory('OrganizationSession', function($resource) {
-  return $resource("http://localhost:3000/organizations/sign_in.json")
+.factory('UserProfile', function($resource) {
+  return $resource("http://localhost:3000/volunteers/sign_in.json");
 })
+
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
