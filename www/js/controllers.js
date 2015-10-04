@@ -24,13 +24,13 @@ angular.module('starter.controllers', [])
 
 .controller('appCtrl', function($scope, $ionicSideMenuDelegate) {
     $scope.toggleLeft = function() {
-      console.log("hihihihihi");
       $ionicSideMenuDelegate.toggleLeft();
     };
 })
 
-.controller('MainCtrl', function($scope, $stateParams, $http) {
+.controller('MainCtrl', function($scope, $stateParams, $http, $compile) {
     console.log($stateParams);
+    $scope.volunteerData = false;
     data = {
       weekly_hrs: 5
     }
@@ -38,6 +38,23 @@ angular.module('starter.controllers', [])
     .success(function (data, status, headers) {
         console.log(data);
     })
+
+    $scope.listVolunteers = function(departmentIndex) {
+      if($scope.volunteerData){
+        $scope.volunteerData = false;
+      } else {
+        $scope.volunteerData = true;
+      }
+      var depId = {
+        id: departmentIndex
+      }
+      $scope.properIndex = departmentIndex;
+      $http.get('http://localhost:3000/departments/' + departmentIndex, depId)
+      .success(function (data, status, headers) {
+          $scope.volunteers = data.departments
+          $scope.totalVolunteers = $scope.volunteers.length;
+      })
+    }
 })
 
 .controller('DashCtrl', function($scope) {})

@@ -13,19 +13,29 @@
 	  <!-- Left menu -->
 	  <ion-side-menu side="left">
 	    <ul class="list">
-
+	    	<li class="item" style="margin-top:45px;">
+	    		SCHEDULE
+	    	</li>
 	    </ul> 
 	  </ion-side-menu>
 
-	  <ion-side-menu-content>
+	  <ion-side-menu-content style="overflow:scroll;">
 	    <div style="height:45px;"></div>
 	    <ion-list>
-	      <ion-item style="padding:0">
-	         <div class="homepage-bg-img">
+	      <ion-item style="padding:0" id="homepage-img-1">
+	         <div class="homepage-bg-img" ng-click="listVolunteers(1)">
 	         	<img src="http://i.imgur.com/qlfKbk9.jpg">
 	         	<div class="homepage-text">GLOBAL BISTRO</div>
 	         	<div class="homepage-subtext">5 volunteers</div>
 	         </div>
+	         <ol class="rectangle-list">
+	           <li class="row volunteers_list" ng-show="volunteerData && properIndex == 1" ng-repeat="volunteer in volunteers">
+	           		<a href="#">
+		           		<span style="width:50%; float:left;">{{volunteer.first_name}} {{volunteer.last_name}}</span>
+		           		<span style="width:50%; text-align:right; float:right;"> {{volunteer.weekly_hrs}} working hours this week.</span>
+		           	</a>
+	           </li>
+	         </ol>
 	      </ion-item>
 	      <ion-item style="padding:0">
 	         <div class="homepage-bg-img">
@@ -33,6 +43,14 @@
 	         	<div class="homepage-text">GLOBAL BISTRO</div>
 	         	<div class="homepage-subtext">5 volunteers</div>
 	         </div>
+              <ol class="rectangle-list">
+                <li class="row volunteers_list" ng-show="volunteerData && properIndex == 2" ng-repeat="volunteer in volunteers">
+                		<a href="#">
+     	           		<span style="width:50%; float:left;">{{volunteer.first_name}} {{volunteer.last_name}}</span>
+     	           		<span style="width:50%; text-align:right; float:right;"> {{volunteer.weekly_hrs}} working hours this week.</span>
+     	           	</a>
+                </li>
+              </ol>	         
 	      </ion-item>
 	      <ion-item style="padding:0">
 	         <div class="homepage-bg-img">
@@ -40,6 +58,14 @@
 	         	<div class="homepage-text">GLOBAL BISTRO</div>
 	         	<div class="homepage-subtext">5 volunteers</div>
 	         </div>
+              <ol class="rectangle-list">
+                <li class="row volunteers_list" ng-show="volunteerData && properIndex == 3" ng-repeat="volunteer in volunteers">
+                		<a href="#">
+     	           		<span style="width:50%; float:left;">{{volunteer.first_name}} {{volunteer.last_name}}</span>
+     	           		<span style="width:50%; text-align:right; float:right;"> {{volunteer.weekly_hrs}} working hours this week.</span>
+     	           	</a>
+                </li>
+              </ol>	
 	      </ion-item>
 	      <ion-item style="padding:0">
 	         <div class="homepage-bg-img">
@@ -47,6 +73,14 @@
 	         	<div class="homepage-text">GLOBAL BISTRO</div>
 	         	<div class="homepage-subtext">5 volunteers</div>
 	         </div>
+              <ol class="rectangle-list">
+                <li class="row volunteers_list" ng-show="volunteerData && properIndex == 4" ng-repeat="volunteer in volunteers">
+                		<a href="#">
+     	           		<span style="width:50%; float:left;">{{volunteer.first_name}} {{volunteer.last_name}}</span>
+     	           		<span style="width:50%; text-align:right; float:right;"> {{volunteer.weekly_hrs}} working hours this week.</span>
+     	           	</a>
+                </li>
+              </ol>	
 	      </ion-item>
 	      <ion-item style="padding:0">
 	         <div class="homepage-bg-img">
@@ -54,6 +88,14 @@
 	         	<div class="homepage-text">GLOBAL BISTRO</div>
 	         	<div class="homepage-subtext">5 volunteers</div>
 	         </div>
+             <ol class="rectangle-list">
+               <li class="row volunteers_list" ng-show="volunteerData && properIndex == 2" ng-repeat="volunteer in volunteers">
+               		<a href="#">
+    	           		<span style="width:50%; float:left;">{{volunteer.first_name}} {{volunteer.last_name}}</span>
+    	           		<span style="width:50%; text-align:right; float:right;"> {{volunteer.weekly_hrs}} working hours this week.</span>
+    	           	</a>
+               </li>
+             </ol>	
 	      </ion-item>
 	    </ion-list>
 	  </ion-side-menu-content>
