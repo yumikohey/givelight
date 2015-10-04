@@ -1,4 +1,35 @@
-/* Empty. Add your own CSS if you like */
+.item-avatar > img:first-child {
+	max-height: 100px;
+	max-width: 100px;
+}
+
+.bar-givelight {
+	background-color: #333;
+	color: #fff;
+}
+
+.menu {
+	background-color: #333;
+}
+
+.side-menu-list-item {
+	background-color: #333;
+	color: #fff;
+	border-color: #333;
+	font-weight: bold;
+}
+
+.givelift-profile{
+	position: relative;
+	margin-top: 45px;
+}
+
+.gifelift-profile img {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+}
+
 .homepage-bg-img {
 	position: relative; 
 	height: 160px;

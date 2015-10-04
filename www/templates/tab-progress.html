@@ -1,0 +1,65 @@
+<ion-view view-title="Progress" ng-controller="appCtrl">
+	<ion-nav-bar class="bar-givelight">
+	  <ion-nav-back-button>
+	  </ion-nav-back-button>
+
+	  <ion-nav-buttons side="left">
+	    <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+	    </button>
+	  </ion-nav-buttons>
+	</ion-nav-bar>
+
+	<ion-side-menus>
+	  <!-- Left menu -->
+	  <ion-side-menu side="left">
+	  	<ion-list>
+	  		<ion-item style="height:150px; background-color:#333;" class="item-avatar item-icon givelift-profile">
+	  		  <img style="left: 80px;" ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
+	  		</ion-item>
+	  	</ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-calendar"></i>SCHEDULE
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-load-d"></i>PROGRESS
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-ios-list-outline"></i>ANALYSIS
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-ios-gear-outline"></i>SETTING
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-flag"></i>ABOUT US
+	      </ion-item>
+	    </ion-list>
+
+	  </ion-side-menu>
+
+	  <ion-side-menu-content>
+	  		<div class="progress-factor flexy-item">
+	  			<div class="progress-bar">
+	  				<div class="rectangle-3d has-rotation has-colors navy ruler" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="bar-0_0">
+	  					<div class="tooltip white"></div>
+	  					<div class="bar-face face-position roof percentage"></div>
+	  					<div class="bar-face face-position back percentage"></div>
+	  					<div class="bar-face face-position floor percentage volume-lights"></div>
+	  					<div class="bar-face face-position left"></div>
+	  					<div class="bar-face face-position right"></div>
+	  					<div class="bar-face face-position front percentage volume-lights shine"></div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  </ion-side-menu-content>
+	  
+	</ion-side-menus>
+</ion-view>

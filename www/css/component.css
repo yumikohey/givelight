@@ -1,0 +1,755 @@
+/* Component styles */
+/* line 5, ../scss/component.scss */
+
+/* line 72, ../scss/component.scss */
+.progress-factor {
+  font-size: 5em;
+  padding: 1em .2em 0;
+  flex: 0 1 100%;
+}
+
+/* line 79, ../scss/component.scss */
+.progress-bar {
+  font-size: 1em;
+  text-align: center;
+  width: 100%;
+  height: 1em;
+  perspective: 12em;
+  perspective-origin: 50% 50%;
+}
+
+/* line 91, ../scss/component.scss */
+.retangle-3d {
+  font-size: 1em;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 1em;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+/* line 105, ../scss/component.scss */
+.retangle-3d.regular-width {
+  width: 1em;
+}
+/* line 108, ../scss/component.scss */
+.retangle-3d.regular-width[aria-valuenow] .percentage:before {
+  width: 100%;
+}
+/* line 116, ../scss/component.scss */
+.retangle-3d.has-rotation {
+  transform: rotateX(60deg);
+}
+/* line 121, ../scss/component.scss */
+.retangle-3d .rectangle-3d-face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 64, 105, 0.3);
+  backface-visibility: visible;
+  transition: transform 0.5s ease-out;
+}
+/* line 138, ../scss/component.scss */
+.retangle-3d .bar-face.face-position {
+  transform-origin: 50% 100%;
+}
+/* line 142, ../scss/component.scss */
+.retangle-3d .bar-face.face-position.roof {
+  transform: translateZ(1em);
+  transition-delay: 2s;
+}
+/* line 147, ../scss/component.scss */
+.retangle-3d .bar-face.face-position.front {
+  transform: rotateX(-90deg);
+  transition-delay: 0s;
+}
+/* line 152, ../scss/component.scss */
+.retangle-3d .bar-face.face-position.right {
+  left: auto;
+  right: -.5em;
+  width: 1em;
+  transform: rotateX(-90deg) rotateY(90deg) translateX(0.5em);
+  transition-delay: 0.5s;
+}
+/* line 160, ../scss/component.scss */
+.retangle-3d .bar-face.face-position.back {
+  transform: rotateX(-90deg) rotateY(0deg) translateZ(-1em);
+  transition-delay: 1s;
+}
+/* line 165, ../scss/component.scss */
+.retangle-3d .bar-face.face-position.left {
+  width: 1em;
+  transform: rotateX(-90deg) rotateY(-90deg) translateX(-0.5em) translateZ(0.5em);
+  transition-delay: 1.5s;
+}
+/* line 173, ../scss/component.scss */
+.retangle-3d .bar-face.percentage:before {
+  content: '';
+  font-size: .25em;
+  line-height: 4em;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  margin: 0;
+  display: block;
+  box-sizing: border-box;
+  color: rgba(68, 68, 68, 0.8);
+  transition: all 0.5s ease-out;
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.red .bar-face, .rectangle-3d.red[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.red .face-position.left, .rectangle-3d.red[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(236, 0, 113, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.red[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.red .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.red .percentage:before {
+  background-color: rgba(236, 0, 113, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.red .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.red:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.red:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.red:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.yellow .bar-face, .bar.yellow[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.yellow .face-position.left, .rectangle-3d.yellow[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(241, 196, 15, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.yellow[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.yellow .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.yellow .percentage:before {
+  background-color: rgba(241, 196, 15, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.yellow .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.yellow:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.yellow:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.yellow:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(241, 196, 15, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.lime .bar-face, .rectangle-3d.lime[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.lime .face-position.left, .rectangle-3d.lime[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(215, 255, 0, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.lime[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.lime .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.lime .percentage:before {
+  background-color: rgba(215, 255, 0, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.lime .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(215, 255, 0, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.lime:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.lime:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.lime:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(215, 255, 0, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.navy .bar-face, .bar.navy[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.navy .face-position.left, .rectangle-3d.navy[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(10, 64, 105, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.navy[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.navy .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.navy .percentage:before {
+  background-color: rgba(10, 64, 105, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.navy .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.navy:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.navy:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.navy:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(10, 64, 105, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.cyan .bar-face, .rectangle-3d.cyan[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.cyan .face-position.left, .rectangle-3d.cyan[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(87, 202, 244, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.cyan[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.cyan .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.cyan .percentage:before {
+  background-color: rgba(87, 202, 244, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.cyan .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.cyan:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.cyan:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.cyan:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(87, 202, 244, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.dark .bar-face, .rectangle-3d.dark[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.dark .face-position.left, .rectangle-3d.dark[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(68, 68, 68, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.dark[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.dark .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.dark .percentage:before {
+  background-color: rgba(68, 68, 68, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.dark .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.dark:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.dark:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.dark:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(68, 68, 68, 0);
+}
+/* line 24, ../scss/component.scss */
+.rectangle-3d.orange .bar-face, .rectangle-3d.orange[aria-valuenow='0'] .face-position.right {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* line 29, ../scss/component.scss */
+.rectangle-3d.orange .face-position.left, .rectangle-3d.orange[aria-valuenow='100'] .face-position.right {
+  background-color: rgba(255, 105, 0, 0.2);
+}
+/* line 34, ../scss/component.scss */
+.rectangle-3d.orange[aria-valuenow='100'] .face-position.right {
+  transition-delay: 0.5s;
+}
+/* line 38, ../scss/component.scss */
+.rectangle-3d.orange .face-position.floor.volume-lights {
+  box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+/* line 45, ../scss/component.scss */
+.rectangle-3d.orange .percentage:before {
+  background-color: rgba(255, 105, 0, 0.5);
+}
+/* line 49, ../scss/component.scss */
+.rectangle-3d.orange .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0.25);
+}
+/* line 56, ../scss/component.scss */
+.rectangle-3d.orange:not(.has-colors)[aria-valuenow] .face-position {
+  background-color: rgba(68, 68, 68, 0.6);
+}
+/* line 60, ../scss/component.scss */
+.rectangle-3d.orange:not(.has-colors) .percentage:before {
+  background-color: transparent;
+}
+/* line 64, ../scss/component.scss */
+.rectangle-3d.orange:not(.has-colors) .volume-lights.shine:before {
+  box-shadow: 0 1.6em 3em rgba(255, 105, 0, 0);
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='1'] .percentage:before {
+  width: 1%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='2'] .percentage:before {
+  width: 2%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='3'] .percentage:before {
+  width: 3%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='4'] .percentage:before {
+  width: 4%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='5'] .percentage:before {
+  width: 5%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='6'] .percentage:before {
+  width: 6%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='7'] .percentage:before {
+  width: 7%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='8'] .percentage:before {
+  width: 8%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='9'] .percentage:before {
+  width: 9%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='10'] .percentage:before {
+  width: 10%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='11'] .percentage:before {
+  width: 11%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='12'] .percentage:before {
+  width: 12%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='13'] .percentage:before {
+  width: 13%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='14'] .percentage:before {
+  width: 14%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='15'] .percentage:before {
+  width: 15%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='16'] .percentage:before {
+  width: 16%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='17'] .percentage:before {
+  width: 17%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='18'] .percentage:before {
+  width: 18%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='19'] .percentage:before {
+  width: 19%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='20'] .percentage:before {
+  width: 20%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='21'] .percentage:before {
+  width: 21%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='22'] .percentage:before {
+  width: 22%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='23'] .percentage:before {
+  width: 23%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='24'] .percentage:before {
+  width: 24%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='25'] .percentage:before {
+  width: 25%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='26'] .percentage:before {
+  width: 26%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='27'] .percentage:before {
+  width: 27%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='28'] .percentage:before {
+  width: 28%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='29'] .percentage:before {
+  width: 29%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='30'] .percentage:before {
+  width: 30%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='31'] .percentage:before {
+  width: 31%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='32'] .percentage:before {
+  width: 32%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='33'] .percentage:before {
+  width: 33%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='34'] .percentage:before {
+  width: 34%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='35'] .percentage:before {
+  width: 35%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='36'] .percentage:before {
+  width: 36%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='37'] .percentage:before {
+  width: 37%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='38'] .percentage:before {
+  width: 38%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='39'] .percentage:before {
+  width: 39%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='40'] .percentage:before {
+  width: 40%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='41'] .percentage:before {
+  width: 41%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='42'] .percentage:before {
+  width: 42%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='43'] .percentage:before {
+  width: 43%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='44'] .percentage:before {
+  width: 44%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='45'] .percentage:before {
+  width: 45%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='46'] .percentage:before {
+  width: 46%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='47'] .percentage:before {
+  width: 47%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='48'] .percentage:before {
+  width: 48%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='49'] .percentage:before {
+  width: 49%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='50'] .percentage:before {
+  width: 50%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='51'] .percentage:before {
+  width: 51%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='52'] .percentage:before {
+  width: 52%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='53'] .percentage:before {
+  width: 53%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='54'] .percentage:before {
+  width: 54%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='55'] .percentage:before {
+  width: 55%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='56'] .percentage:before {
+  width: 56%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='57'] .percentage:before {
+  width: 57%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='58'] .percentage:before {
+  width: 58%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='59'] .percentage:before {
+  width: 59%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='60'] .percentage:before {
+  width: 60%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='61'] .percentage:before {
+  width: 61%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='62'] .percentage:before {
+  width: 62%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='63'] .percentage:before {
+  width: 63%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='64'] .percentage:before {
+  width: 64%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='65'] .percentage:before {
+  width: 65%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='66'] .percentage:before {
+  width: 66%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='67'] .percentage:before {
+  width: 67%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='68'] .percentage:before {
+  width: 68%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='69'] .percentage:before {
+  width: 69%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='70'] .percentage:before {
+  width: 70%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='71'] .percentage:before {
+  width: 71%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='72'] .percentage:before {
+  width: 72%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='73'] .percentage:before {
+  width: 73%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='74'] .percentage:before {
+  width: 74%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='75'] .percentage:before {
+  width: 75%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='76'] .percentage:before {
+  width: 76%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='77'] .percentage:before {
+  width: 77%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='78'] .percentage:before {
+  width: 78%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='79'] .percentage:before {
+  width: 79%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='80'] .percentage:before {
+  width: 80%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='81'] .percentage:before {
+  width: 81%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='82'] .percentage:before {
+  width: 82%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='83'] .percentage:before {
+  width: 83%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='84'] .percentage:before {
+  width: 84%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='85'] .percentage:before {
+  width: 85%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='86'] .percentage:before {
+  width: 86%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='87'] .percentage:before {
+  width: 87%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='88'] .percentage:before {
+  width: 88%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='89'] .percentage:before {
+  width: 89%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='90'] .percentage:before {
+  width: 90%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='91'] .percentage:before {
+  width: 91%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='92'] .percentage:before {
+  width: 92%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='93'] .percentage:before {
+  width: 93%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='94'] .percentage:before {
+  width: 94%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='95'] .percentage:before {
+  width: 95%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='96'] .percentage:before {
+  width: 96%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='97'] .percentage:before {
+  width: 97%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='98'] .percentage:before {
+  width: 98%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='99'] .percentage:before {
+  width: 99%;
+}
+/* line 209, ../scss/component.scss */
+.rectangle-3d[aria-valuenow='100'] .percentage:before {
+  width: 100%;
+}

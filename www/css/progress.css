@@ -1,0 +1,16 @@
+.perspective {
+	font-size: 5em; 
+	perspective: 12em; 
+	perspective-origin: 50% 50%;
+	text-align: center;
+}
+
+.rectangle-3d {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-top: 1em;
+	position: relative;
+	transform: rotateX(60deg);
+	transform-style: preserve-3d; 
+}

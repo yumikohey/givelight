@@ -1,5 +1,5 @@
-<ion-view view-title="Mains" ng-controller="appCtrl">
-	<ion-nav-bar class="bar-stable">
+<ion-view view-title="Light Helper" ng-controller="appCtrl">
+	<ion-nav-bar class="bar-givelight">
 	  <ion-nav-back-button>
 	  </ion-nav-back-button>
 
@@ -12,11 +12,37 @@
 	<ion-side-menus>
 	  <!-- Left menu -->
 	  <ion-side-menu side="left">
-	    <ul class="list">
-	    	<li class="item" style="margin-top:45px;">
-	    		SCHEDULE
-	    	</li>
-	    </ul> 
+	  	<ion-list>
+	  		<ion-item style="height:150px; background-color:#333;" class="item-avatar item-icon givelift-profile">
+	  		  <img style="left: 80px;" ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
+	  		</ion-item>
+	  	</ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-calendar"></i>SCHEDULE
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item" ng-click="progress()">
+	        <i style="color:#ccc;" class="icon ion-load-d"></i>PROGRESS
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-ios-list-outline"></i>ANALYSIS
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-ios-gear-outline"></i>SETTING
+	      </ion-item>
+	    </ion-list>
+	    <ion-list>
+	      <ion-item class="item-icon-left side-menu-list-item">
+	        <i style="color:#ccc;" class="icon ion-flag"></i>ABOUT US
+	      </ion-item>
+	    </ion-list>
+
 	  </ion-side-menu>
 
 	  <ion-side-menu-content style="overflow:scroll;">
